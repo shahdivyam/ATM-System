@@ -1,3 +1,6 @@
+<?php
+echo "Hello World Namo Arihntaram "
+?>
 <html>
 <head>
 	<title>Log In</title>
@@ -14,17 +17,20 @@
 
 		<h1 align="center"><u>Register For ATM </u></h1>
 
-		<form class="form-horizontal" style="position:relative; left:30%;">
+		<form method="post" action = "successful.php" class="form-horizontal" style="position:relative; left:30%;">
 			<div class="form-group">
 			<div class="col-xs-5">
 					<label for="Account">Account Number : </label>
-					<input class="form-control" type="text" placeholder="Enter your account Number">
+					<input
+                     name="account_no" class="form-control" type="text" placeholder="Enter your account Number">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-xs-3">
 					<label for="pin">PIN Number : </label>
-					<input class="form-control" type="password" placeholder="Enter your 4 digit PIN">
+					<input
+                           name="pin_no"
+                           class="form-control" type="password" placeholder="Enter your 4 digit PIN">
 				</div>
 			</div>
             <div class="form-group">
@@ -33,19 +39,22 @@
                     Re-Enter Pin Number :
                     </label>
                     <input class="form-control"
+                           name="re_pin_no"
                            type="password" placeholder="Re-Enter Pin">
                 </div>
             </div>
 			<div class="form-group">
 				<div class="col-xs-3">
 					<label for="contact">Enter your Contact Number : </label>
-					<input class="form-control" type="text" >
+					<input
+                           name="contact_no"class="form-control" type="text" >
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-xs-4">
 					<label for="balance">Enter Initial Account Balance : </label>
-					<input class="form-control" type="text">
+					<input
+                           name  ="balance"class="form-control" type="text">
 				</div>
 			</div>
 			<br>
