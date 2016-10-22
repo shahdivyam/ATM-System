@@ -2,16 +2,28 @@
 
 session_start(); #Session Creation
 
+require ("connect.php") ;
 require ("user_login.php") ;
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
+$acc_no = $_SESSION['acc_no'] ;
 
-$conn = mysql_connect($dbhost, $dbuser, $dbpass);
-$conn_db = mysql_select_db("ATM_System");
+global $Balance;
+global $Customer_Name;
 
-$acc_no = $_SESSION['$acc_no'] ;
+$sql = "SELECT Account_No, Customer_Name, Balance FROM User_data WHERE Account_No = '$acc_no'"; #MySQL Query
+$query_run = mysql_query($sql) ;
+
+while($row = mysql_fetch_assoc($query_run))
+{
+	$cust_name = $row['Customer_Name'];
+	global $Customer_Name ;
+	$Customer_Name = $cust_name ;
+
+	$bal = $row['Balance'];
+	global $Balance ;
+	$Balance = $bal ;
+
+}
 
 ?>
 
@@ -22,12 +34,19 @@ $acc_no = $_SESSION['$acc_no'] ;
 </head>
 <body>
 <h1>
-Welcome Account No. - 
+Welcome
+</h1>
+<br>
+
+<h3> 
 <?php
 
-if (isset($_SESSION['$acc_no']) && !empty($_SESSION['$acc_no']))
+if (isset($_SESSION['acc_no']) && !empty($_SESSION['acc_no']))
+
 {
-	echo $_SESSION['$acc_no'];
+	echo "Account Number - " . $_SESSION['acc_no']."<br>";
+	echo "Customer Name - " . $Customer_Name."<br>";
+	echo "Balance - " . $Balance."<br>" ;
 }
 
 ?>
@@ -35,4 +54,3 @@ if (isset($_SESSION['$acc_no']) && !empty($_SESSION['$acc_no']))
 </h1>
 </body>
 </html>
-
