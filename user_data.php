@@ -47,6 +47,12 @@ body
 	background-color: #F0F0F0  ;
 }
 	
+a
+{
+	text-decoration: none;
+	color: white;
+}	
+
 .User_Table
 {
 	height: 200px;
@@ -207,9 +213,9 @@ body
 <br>
 <br>
 
-<button class = "Withdraw">Withdraw Amount</button>
-<button class = "Deposit">Deposit Amount</button>
-<button class = "History">Transaction History</button>
+<button class = "Withdraw"><a href = "withdraw.html">Withdraw Amount</a></button>
+<button class = "Deposit"><a href = "deposit.html">Deposit Amount</a></button>
+<button class = "History"><a href = "history.php">Transaction History</a></button>
 <button class = "Pin_Change">Pin Change</button>
 
 <br>
