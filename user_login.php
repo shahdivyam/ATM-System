@@ -1,6 +1,8 @@
 <!-- PHP Code-->
 <?php
 
+session_start() ;
+
 require ("connect.php");
 
 if (isset($_POST["account_no"]) && isset($_POST["pin_no"]))
