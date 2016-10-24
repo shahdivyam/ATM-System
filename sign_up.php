@@ -1,45 +1,66 @@
 <?php
-
-require ("connect.php") ;
-
-if (isset($_POST["account_no"]) && isset($_POST["pin_no"]) && isset($_POST["confirm_pin_no"]) && isset($_POST["cust_name"]) && isset($_POST["contact_no"]) && isset($_POST["balance"]) && ($_POST["pin_no"] == $_POST["confirm_pin_no"]))
-{
-	$account_no = $_POST["account_no"];	
-	$pin_no = $_POST["pin_no"];
-	$confirm_pin_no = $_POST["confirm_pin_no"] ; 
-	$customer_name = $_POST["cust_name"] ;
-	$contact_no = $_POST["contact_no"] ;
-	$balance = $_POST["balance"] ;
-	
-	if(!empty($account_no) && !empty($pin_no) && !empty($confirm_pin_no) && !empty($customer_name) && !empty($contact_no) && !empty($balance))
-	{
-		$query = "SELECT Account_No FROM Users WHERE Account_No = $account_no" ;
-		$query_run = mysql_query($query) ;
-		$query_num_rows = mysql_num_rows($query_run); //Check for Existing rows in Users Table
-
-		if($query_num_rows == 1)
-		{
-			echo "The Account Number already exists";
-		}
-		else if ($query_num_rows == 0)
-		{
-			$sql1 = "INSERT INTO Users VALUES ('$account_no', '$pin_no')";
-			$sql2 = "INSERT INTO User_data VALUES ('$account_no', '$customer_name', '$contact_no', '$balance')";
-			
-			$query_run1 = mysql_query($sql1);
-			$query_run2 = mysql_query($sql2) ;
-
-			if($query_run1 && $query_run2)
-			{
-				echo "<br>You have registered successfully";
-			}
-		}
-	}
-	else
-	{
-		echo "<br>Empty Data item not allowed";
-	}
-
-}
-
+echo "Hello World Namo Arihntaram "
 ?>
+<html>
+<head>
+	<title>Log In</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<!--Main Code goes here-->
+<body>
+	<div class="container">
+
+		<h1 align="center"><u>Register For ATM </u></h1>
+
+		<form method="post" action = "successful.php" class="form-horizontal" style="position:relative; left:30%;">
+			<div class="form-group">
+			<div class="col-xs-5">
+					<label for="Account">Account Number : </label>
+					<input
+                     name="account_no" class="form-control" type="text" placeholder="Enter your account Number">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-xs-3">
+					<label for="pin">PIN Number : </label>
+					<input
+                           name="pin_no"
+                           class="form-control" type="password" placeholder="Enter your 4 digit PIN">
+				</div>
+			</div>
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <label for="confirmPin">
+                    Re-Enter Pin Number :
+                    </label>
+                    <input class="form-control"
+                           name="re_pin_no"
+                           type="password" placeholder="Re-Enter Pin">
+                </div>
+            </div>
+			<div class="form-group">
+				<div class="col-xs-3">
+					<label for="contact">Enter your Contact Number : </label>
+					<input
+                           name="contact_no"class="form-control" type="text" >
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-xs-4">
+					<label for="balance">Enter Initial Account Balance : </label>
+					<input
+                           name  ="balance"class="form-control" type="text">
+				</div>
+			</div>
+			<br>
+			<button type="submit" class="btn btn-default">Submit Data</button>
+		</form>
+	</div>
+
+</body>
+</html>
