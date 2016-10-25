@@ -1,5 +1,7 @@
 <?php
 
+include ("user_login.php");
+
 $servername = "localhost";
 $username = "root";
 $password = "27028885";
@@ -16,6 +18,7 @@ global $query;
 $query = "INSERT INTO Customers VALUES ('$account_no','$pin_no','$contact_no','$balance')";
 
 $account_no = $_POST["account_no"];
+$customer_name = $_POST["name"];  
 $pin_no = $_POST["pin_no"];
 $re_pin_no = $_POST["re_pin_no"];
 $contact_no = $_POST["contact_no"];
@@ -79,24 +82,24 @@ function check(){
 	$checkQuery = "SELECT AccountNo FROM Customers WHERE AccountNo = '$account_no'";
 	$result = $conn->query($checkQuery);
 	$count = mysqli_num_rows($result);
-	if($count != 0 ){
+	if($count != 0 ){invali
 		
 		global $user_exists;
 		$user_exists = 1;
-		echo "user Exists value  : $user_exists";
 	}
 	
-	echo "user Exists value  : $user_exists";
 	global $all_fine;
 	global $user_exists;
 	
 	if($all_fine!=0&&$user_exists==0){
 		
-		global $pins_match;global $account_no;global $pin_no;global $contact_no ;global $balance;
+		global $pins_match;global $account_no;global $pin_no;global $contact_no ;global $balance;global $customer_name;
 		global $conn;
 		global $query;
-		$query = "INSERT INTO Customers VALUES ('$account_no','$pin_no','$contact_no','$balance')";
-		$conn->query($query) ;		
+		$query = "INSERT INTO Customers VALUES ('$account_no','$customer_name','$pin_no','$contact_no','$balance')";
+		$query_users = "INSERT into Users VALUES('$account_no','$pin_no')";
+		$conn->query($query) ;
+		$conn->query($query_users);		
 			echo "New record created successfully <br><br>";
 	    
 			echo "Account Number : $account_no <br> Pin Number : $pin_no<br> Contact Number : $contact_no<br> Balance :$balance <br>" ;

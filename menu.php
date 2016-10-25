@@ -1,23 +1,33 @@
 <?php
 
-#session_start(); #Session Creation
+session_start(); #Session Creation : line was commented earlier ,
 
-include ("connect.php") ;
-include ("user_login.php") ;
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "27028885";
+$dbname = "ATM_System";
 
-$acc_no = $_SESSION['acc_no'] ;
+$conn = new mysqli($dbhost, $dbuser, $dbpass,$dbname);
+
+//include ("connect.php") ;
+//include ("user_login.php") ;
+global $AccountNo;
+$AccountNo = $_SESSION['acc_no'] ;
 
 global $Balance;
 global $Customer_Name;
 global $Contact_No;
 
-$sql = "SELECT Account_No, Customer_Name, Balance, Contact_No FROM User_data WHERE Account_No = '$acc_no'"; #MySQL Query
-$query_run = mysql_query($sql) ;
+$sql_select = "SELECT AccountNo,CustomerName,PIN,MobileNo,Balance FROM Customers WHERE AccountNo = $AccountNo" ;
+$sql_select_result = $conn->query($sql_select);
 
-while($row = mysql_fetch_assoc($query_run))
-{
+#$sql = "SELECT Account_No, Customer_Name, Balance, Contact_No FROM User_data WHERE Account_No = '$acc_no'"; #MySQL Query
+#$query_run = mysql_query($sql) ;
+#$row = $result_sql1->fetch_assoc()
+
+while($row = $sql_select_result->fetch_assoc()){
 	#Fetch the customer name
-	$cust_name = $row['Customer_Name'];
+	$cust_name = $row['CustomerName'];
 	global $Customer_Name ;
 	$Customer_Name = $cust_name ;
 
@@ -27,7 +37,7 @@ while($row = mysql_fetch_assoc($query_run))
 	$Balance = $bal ;
 
 	#Fetch the Contact Details
-	$contact = $row['Contact_No'];
+	$contact = $row['MobileNo'];
 	global $Contact_No;
 	$Contact_No = $contact;
 
@@ -184,7 +194,6 @@ body
 <h1 align="center">
 <u>Welcome </u>
 </h1>
-
 <br>
 <br>
 
@@ -192,7 +201,7 @@ body
 <table class="User_Table" border="4px">
 <tr>
 <td><b>Account Number  </b></td>
-<td><?php echo $acc_no ; ?></td>
+<td><?php echo $AccountNo ; ?></td>
 </tr>
 <tr>
 <td><b>Customer Name  </b></td>

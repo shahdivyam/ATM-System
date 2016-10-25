@@ -1,9 +1,15 @@
 <?php
 
 #session_start(); #Session Creation
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "27028885";
+$dbname = "ATM_System";
 
-require ("connect.php") ;
-require ("user_login.php") ;
+$conn = new mysqli($dbhost, $dbuser, $dbpass,$dbname);
+
+include ("connect.php") ;
+include ("user_login.php") ;
 
 $acc_no = $_SESSION['acc_no'] ;
 

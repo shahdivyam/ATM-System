@@ -3,8 +3,9 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "27028885";
+$dbname = "ATM_System";
 
-$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+$conn = new mysqli($dbhost, $dbuser, $dbpass,$dbname);
 
 /*
 if ($conn)
@@ -16,8 +17,6 @@ else
 	echo mysql_error();
 }
 */
-
-$conn_db = mysql_select_db("ATM_System"); #Select a Database after Connection
 
 /*
 if($conn_db)

@@ -15,7 +15,7 @@ echo "Hello World Namo Arihntaram "
 <body>
 	<div class="container">
 
-		<h1 align="center"><u>Register For ATM </u></h1>
+		<h1 align="center"><u>Register For ATM Divs</u></h1>
 
 		<form method="post" action = "successful.php" class="form-horizontal" style="position:relative; left:30%;">
 			<div class="form-group">
@@ -23,6 +23,13 @@ echo "Hello World Namo Arihntaram "
 					<label for="Account">Account Number : </label>
 					<input
                      name="account_no" class="form-control" type="text" placeholder="Enter your account Number">
+				</div>
+			</div>
+			<div class="form-group">
+			<div class="col-xs-5">
+					<label for="Name">Name : </label>
+					<input
+                     name="name" class="form-control" type="text" placeholder="Enter your full name">
 				</div>
 			</div>
 			<div class="form-group">
