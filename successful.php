@@ -82,7 +82,7 @@ function check(){
 	$checkQuery = "SELECT AccountNo FROM Customers WHERE AccountNo = '$account_no'";
 	$result = $conn->query($checkQuery);
 	$count = mysqli_num_rows($result);
-	if($count != 0 ){invali
+	if($count != 0 ){
 		
 		global $user_exists;
 		$user_exists = 1;

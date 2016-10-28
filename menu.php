@@ -18,7 +18,7 @@ global $Balance;
 global $Customer_Name;
 global $Contact_No;
 
-$sql_select = "SELECT AccountNo,CustomerName,PIN,MobileNo,Balance FROM Customers WHERE AccountNo = $AccountNo" ;
+$sql_select = "SELECT `AccountNo`,`CustomerName`,`PIN`,`MobileNo`,`Balance` FROM `Customers` WHERE `AccountNo` = '$AccountNo'" ;
 $sql_select_result = $conn->query($sql_select);
 
 #$sql = "SELECT Account_No, Customer_Name, Balance, Contact_No FROM User_data WHERE Account_No = '$acc_no'"; #MySQL Query
@@ -216,10 +216,10 @@ body
 <br>
 <br>
 
-<button class = "Withdraw">Withdraw Amount</button>
+<a href="withdraw.html"><button class = "Withdraw">Withdraw Amount</button></a>
 <button class = "Deposit">Deposit Amount</button>
 <button class = "History">Transaction History</button>
-<button class = "Pin_Change">Pin Change</button>
+<a href="pinChange.html"><button class = "Pin_Change">Pin Change</button></a>;
 
 <br>
 <br>
