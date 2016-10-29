@@ -82,8 +82,10 @@ function withdraw(){
 			$updated_balance = $balance - $amount;
 			$_SEESION["updated_balance"] = $updated_balance; 
 			$sql = "UPDATE `Customers` SET `Balance` = '$updated_balance' WHERE `AccountNo` = '$account_no'";
+			$sql_withdraw = "INSERT INTO `Withdraw` VALUES ('$account_no','$amount','$updated_balance')";
 			global $conn;
 			$conn->query($sql);
+			$conn->query($sql_withdraw);
 			global $message ;
 			$message = "Successful transaction : Collect Rs ".$amount ;
 			

@@ -204,12 +204,17 @@ body
 <td><?php echo $AccountNo ; ?></td>
 </tr>
 <tr>
+	
 <td><b>Customer Name  </b></td>
 <td><?php echo $Customer_Name ; ?></td>
+
 </tr>
 <tr>
+
 <td><b>Contact Number  </b></td>
-<td><?php echo $Contact_No ; ?></td>
+
+<td><?php echo $Contact_No ; ?> </td>
+
 </tr>
 </table>
 
@@ -217,8 +222,8 @@ body
 <br>
 
 <a href="withdraw.html"><button class = "Withdraw">Withdraw Amount</button></a>
-<button class = "Deposit">Deposit Amount</button>
-<button class = "History">Transaction History</button>
+<a href="deposit.html"><button class = "Deposit">Deposit Amount</button></a>
+<a href="transaction.php"><button class = "History">Transaction History</button></a>
 <a href="pinChange.html"><button class = "Pin_Change">Pin Change</button></a>;
 
 <br>
