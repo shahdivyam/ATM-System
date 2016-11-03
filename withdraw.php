@@ -21,30 +21,43 @@ if (isset($_POST["withdraw_amount"]) && isset($_POST["pin_no"]))
 
 		$time= date('Y-m-d H:i:s');
 
-		$sql2 = "INSERT INTO Transaction_History VALUES ('$account_no', '$time', '$withdraw_amount', '0') ";
+		$sql2 = "SELECT Balance FROM User_data WHERE Account_No = $account_no" ;
 		$query2 = mysql_query($sql2) ;
 
-		$sql3 = "SELECT Balance FROM User_data WHERE Account_No = $account_no" ;
-		$query3 = mysql_query($sql3) ;
-
-		while ($row3 = mysql_fetch_assoc($query3))
+		//Extract the row by executing the query
+		while ($row2 = mysql_fetch_assoc($query2))
 		{
-			$balance = $row3['Balance'] ;
+
+			$balance = $row2['Balance'] ;
 			$final_balance = $balance - $withdraw_amount ;
 
-			$sql4 = "UPDATE User_data SET Balance = $final_balance WHERE Account_No = $account_no";
-			$query4 = mysql_query($sql4) ;
-
-			if($query4)
+			//Insufficient Funds
+			if($final_balance < 0)
 			{
-				echo "<h3><u>Transaction Successfull</u></h3>"."<br>" ;
+				echo "Transaction could not be completed due to insufficient funds"."<br>" ;
 				echo "Redirecting.." ;
 				header( "refresh:3;url=user_data.php" );
 			}
+
+			//Sufficient Funds Present
+			else
+			{
+				$sql3 = "UPDATE User_data SET Balance = $final_balance WHERE Account_No = $account_no";
+				$query3 = mysql_query($sql3) ;
+
+				$sql4 = "INSERT INTO Transaction_History VALUES ('$account_no', '$time', '$withdraw_amount', '0') ";
+				$query4 = mysql_query($sql4) ;
+
+				if($query3 && $query4)
+				{
+					echo "<h3><u>Transaction Successfull</u></h3>"."<br>" ;
+					echo "Redirecting.." ;
+					header( "refresh:3;url=user_data.php" );
+				}
+			}
 		}
+
 	}
-
-
 }
 
 ?>
