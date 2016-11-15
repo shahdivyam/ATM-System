@@ -40,187 +40,190 @@ while($row = mysql_fetch_assoc($query_run))
 <head>
 	<title></title>
 
-<style>
+	<style>
 
-body
-{
-	background-color: #F0F0F0  ;
-}
-	
-a
-{
-	text-decoration: none;
-	color: white;
-}	
+		body
+		{
+			background-color: 	#DCDCDC;
+		}
 
-.User_Table
-{
-	height: 200px;
-	width:  70%;
-	position: relative;
-	left: 15%;
-	background-color: white;
-}
+		a
+		{
+			text-decoration: none;
+			color: white;
+		}	
 
-.Logout
-{
-	height: 30px;
-	width: 5%;
-	position: absolute;
-	left: 80%;
-	background-color: #008CBA;
-	border-radius: 3px;
-	color: white;
-}
+		.User_Table
+		{
+			height: 200px;
+			width:  70%;
+			position: relative;
+			left: 15%;
+			background-color: white;
+		}
 
-.Withdraw
-{
-	height: 70px;
-	width: 20%;
-	position: relative;
-	left: 10%;
-	background-color: #4CAF50;
-	border-style: solid;
-	border-radius: 10px;
-	border-color: white;
-	text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 25px;
-    color: white;
-}
+		.Logout
+		{
+			height: 30px;
+			width: 5%;
+			position: absolute;
+			left: 80%;
+			background-color: #008CBA;
+			border-radius: 3px;
+			color: white;
+		}
 
-.Withdraw:hover
-{
-	background-color: green;
-	cursor: pointer;
-}
+		.Withdraw
+		{
+			height: 70px;
+			width: 20%;
+			position: relative;
+			left: 10%;
+			background-color: #4CAF50;
+			border-style: solid;
+			border-radius: 10px;
+			border-color: white;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 25px;
+			color: white;
+		}
 
-.Deposit
-{
-	height: 70px;
-	width: 20%;
-	position: relative;
-	left: 10%;
-	background-color: #4CAF50;
-	border-style: solid;
-	border-radius: 10px;
-	text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 25px;
-    color: white;
-}
+		.Withdraw:hover
+		{
+			background-color: green;
+			cursor: pointer;
+		}
 
-.Deposit:hover
-{
-	background-color: green;
-	cursor: pointer;
-}
+		.Deposit
+		{
+			height: 70px;
+			width: 20%;
+			position: relative;
+			left: 10%;
+			background-color: #4CAF50;
+			border-style: solid;
+			border-radius: 10px;
+			border-color: white;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 25px;
+			color: white;
+		}
 
-.History
-{
-	height: 70px;
-	width: 20%;
-	position: relative;
-	left: 10%;
-	background-color: #4CAF50;
-	border-style: solid;
-	border-radius: 10px;
-	text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 25px;
-    color: white;
-}
+		.Deposit:hover
+		{
+			background-color: green;
+			cursor: pointer;
+		}
 
-.History:hover
-{
-	background-color: green;
-	cursor: pointer;
-}
+		.History
+		{
+			height: 70px;
+			width: 20%;
+			position: relative;
+			left: 10%;
+			background-color: #4CAF50;
+			border-style: solid;
+			border-radius: 10px;
+			border-color: white;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 25px;
+			color: white;
+		}
 
-.Pin_Change
-{
-	height: 70px;
-	width: 20%;
-	position: relative;
-	left: 10%;
-	background-color: #4CAF50;
-	border-style: solid;
-	border-radius: 10px;
-	text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 25px;
-    color: white;
-}
+		.History:hover
+		{
+			background-color: green;
+			cursor: pointer;
+		}
 
-.Pin_Change:hover
-{
-	background-color: green;
-	cursor: pointer;
-}
+		.Pin_Change
+		{
+			height: 70px;
+			width: 20%;
+			position: relative;
+			left: 10%;
+			background-color: #4CAF50;
+			border-style: solid;
+			border-radius: 10px;
+			border-color: white;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 25px;
+			color: white;
+		}
 
-.Current_Balance
-{
-	height: 70px;
-	width: 30%;
-	position: relative;
-	left: 35%;
-	top: 10%;
-	background-color: #008CBA;
-	color: white;
-	font-size: 25px;
-	text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-style: solid;
-    border-radius: 10px;
-}
+		.Pin_Change:hover
+		{
+			background-color: green;
+			cursor: pointer;
+		}
+
+		.Current_Balance
+		{
+			height: 70px;
+			width: 30%;
+			position: relative;
+			left: 35%;
+			top: 10%;
+			background-color: #008CBA;
+			color: white;
+			font-size: 25px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			border-style: solid;
+			border-radius: 10px;
+		}
 
 
-</style>
+	</style>
 
 </head>
 <body>
 
-<button class="Logout"><a href = "logout.php"><font style="color:white ; ">Logout</font></a></button>
+	<button class="Logout"><a href = "logout.php"><font style="color:white ; ">Logout</font></a></button>
 
-<h1 align="center">
-<u>Welcome </u>
-</h1>
+	<h1 align="center" style="font-size: 60px;">
+		<u>Welcome </u>
+	</h1>
 
-<br>
-<br>
+	<br>
+	<br>
 
-<!--Tabular Representation of Customer Details-->
-<table class="User_Table" border="4px">
-<tr>
-<td><b>Account Number  </b></td>
-<td><?php echo $acc_no ; ?></td>
-</tr>
-<tr>
-<td><b>Customer Name  </b></td>
-<td><?php echo $Customer_Name ; ?></td>
-</tr>
-<tr>
-<td><b>Contact Number  </b></td>
-<td><?php echo $Contact_No ; ?></td>
-</tr>
-</table>
+	<!--Tabular Representation of Customer Details-->
+	<table class="User_Table" border="4px">
+		<tr>
+			<td><b>Account Number  </b></td>
+			<td><?php echo $acc_no ; ?></td>
+		</tr>
+		<tr>
+			<td><b>Customer Name  </b></td>
+			<td><?php echo $Customer_Name ; ?></td>
+		</tr>
+		<tr>
+			<td><b>Contact Number  </b></td>
+			<td><?php echo $Contact_No ; ?></td>
+		</tr>
+	</table>
 
-<br>
-<br>
+	<br>
+	<br>
 
-<button class = "Withdraw"><a href = "withdraw.html">Withdraw Amount</a></button>
-<button class = "Deposit"><a href = "deposit.html">Deposit Amount</a></button>
-<button class = "History"><a href = "history.php">Transaction History</a></button>
-<button class = "Pin_Change">Pin Change</button>
+	<button class = "Withdraw"><a href = "withdraw.html">Withdraw Amount</a></button>
+	<button class = "Deposit"><a href = "deposit.html">Deposit Amount</a></button>
+	<button class = "History"><a href = "history.php">Transaction History</a></button>
+	<button class = "Pin_Change"><a href = "#">Change Pin</a></button>
 
-<br>
-<br>
-<button class = "Current_Balance">Current Balance : <?php echo $Balance ; ?></button>
+	<br>
+	<br>
+	<button class = "Current_Balance">Current Balance : <?php echo $Balance ; ?></button>
 
 </body>
 </html>
