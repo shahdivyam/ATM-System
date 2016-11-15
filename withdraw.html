@@ -6,19 +6,33 @@
 	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+		body{
+			background-color: 	#2F4F4F;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+
+		#withdraw_form
+		{
+			color: white;
+		}
+	</style>
+
 </head>
 
 <!--Main Code goes here-->
 <body>
 	<div class="container">
 
-		<h1 align="center"><u>Withdrawal Form</u></h1>
+		<h1 align="center" style="color: white; font-size: 100px;"><u>Withdrawal Form</u></h1>
 
 		
 		<!--Form Declarartion-->
-		<form class="form-horizontal" style="position:relative; left:30%;" method="post" action = "withdraw.php">
+		<form class="form-horizontal" style="position:relative; left:30%;" method="post" action = "withdraw.php" id="withdraw_form">
 			<div class="form-group">
-			<div class="col-xs-5">
+				<div class="col-xs-5">
 					<label for="Amount">Amount</label>
 					<input class="form-control" type="text" placeholder="Enter the amount you want to withdraw" name="withdraw_amount">
 				</div>
