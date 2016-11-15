@@ -1,18 +1,41 @@
+
 <html>
 <head>
+	
 	<title>Log In</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+		#image{
+			background-image: url("ATM.jpg");
+			background-size:cover;
+			width: 100%;
+			height: 100%;
+			-webkit-filter: blur(3px);
+			-moz-filter: blur(3px);
+			-o-filter: blur(3px);
+			-ms-filter: blur(3px);
+			filter: blur(3px);
+			position:absolute;
+			width:100%;
+			height:100%;
+			z-index: -1;
+		}
+
+	</style>
+
 </head>
 
 <!--Main Code goes here-->
 <body>
+	<div id = "image"></div>
 	<div class="container" align="center"  style="width: 50%; margin: 0 auto;">
 
-		<h1><u>WELCOME</u></h1>
+		<h1 style="font-size: 120px; color: white"><u>WELCOME</u></h1>
 
 		<br><br><br><br><br>
 
@@ -30,23 +53,23 @@
 					</div>
 					<div class="modal-body">
 
-					<!--Form Declaration-->
+						<!--Form Declaration-->
 						<form class="form-horizontal" action="user_login.php" method="post"> <!--Action Specification-->
-			<div class="form-group" style="position:relative; left : 30%;">
-			<div class="col-xs-5">
-					<label for="Account">Account Number</label>
-					<input class="form-control" type="text" placeholder="Enter your account Number" name="account_no">
-				</div>
-			</div>
-			<div class="form-group" style="position:relative; left : 39%;" >
-				<div class="col-xs-3">
-					<label for="pin">PIN Number</label>
-					<input class="form-control" type="password" placeholder="4 digit PIN" name="pin_no">
-				</div>
-			</div>
-			<br>
-			<button type="submit" class="btn btn-default">Submit</button>
-		</form>
+							<div class="form-group" style="position:relative; left : 30%;">
+								<div class="col-xs-5">
+									<label for="Account">Account Number</label>
+									<input class="form-control" type="text" placeholder="Enter your account Number" name="account_no">
+								</div>
+							</div>
+							<div class="form-group" style="position:relative; left : 39%;" >
+								<div class="col-xs-3">
+									<label for="pin">PIN Number</label>
+									<input class="form-control" type="password" placeholder="4 digit PIN" name="pin_no">
+								</div>
+							</div>
+							<br>
+							<button type="submit" class="btn btn-default">Submit</button>
+						</form>
 					</div>
 				</div>
 
