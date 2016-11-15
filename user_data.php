@@ -219,7 +219,7 @@ while($row = mysql_fetch_assoc($query_run))
 	<button class = "Withdraw"><a href = "withdraw.html">Withdraw Amount</a></button>
 	<button class = "Deposit"><a href = "deposit.html">Deposit Amount</a></button>
 	<button class = "History"><a href = "history.php">Transaction History</a></button>
-	<button class = "Pin_Change"><a href = "#">Change Pin</a></button>
+	<button class = "Pin_Change"><a href = "pinchange.html">Change Pin</a></button>
 
 	<br>
 	<br>
